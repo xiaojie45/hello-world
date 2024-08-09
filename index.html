@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A-Frame GLB Example</title>
+  <title>AR.js with GLB Model</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
-<body>
-  <a-scene physics="debug: true">
-     <!-- 摄像头 -->
-    <a-camera></a-camera>
-    <!-- 定义资源 -->
-    <a-assets>
-      <!-- 引入 .glb 文件 -->
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+     <!-- 定义资源 -->
+     <a-assets>
       <a-asset-item id="my-model" src="./seats.glb"></a-asset-item>
     </a-assets>
 
-    <!-- 使用 .glb 文件 -->
-    <a-gltf-model src="#my-model" position="0 1.6 -3" scale="0.4 0.4 0.4" rotation="0 180 0" grabbable="usePhysics: false" stretchable></a-gltf-model>
+    <!-- 摄像头 -->
+    <a-marker preset="hiro">
+      <!-- 使用 .glb 文件 -->
+      <a-gltf-model src="#my-model" scale="0.5 0.5 0.5" position="0 0 0"></a-gltf-model>
+    </a-marker>
+
+    <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
