@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-Frame GLB Example</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- 定义资源 -->
+    <a-assets>
+      <!-- 引入 .glb 文件 -->
+      <a-asset-item id="my-model" src="./seats.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- 使用 .glb 文件 -->
+    <a-gltf-model src="#my-model" position="0 1.6 -3" rotation="0 180 0"></a-gltf-model>
+
+    <!-- 添加一个基本的环境 -->
+    <!-- <a-sky color="#ECECEC"></a-sky> -->
+  </a-scene>
+</body>
+</html>
