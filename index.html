@@ -30,16 +30,14 @@
       <a-asset-item id="seats" src="seats.glb"></a-asset-item>
     </a-assets>
     <!-- 使用模型 -->
-    <a-marker preset="hiro">
-      <a-gltf-model 
-        src="#seats" 
-        scale="0.1 0.1 0.1" 
-        position="0 0 0" 
-        update-scale-text
-        gesture-handler 
-      >
-      </a-gltf-model>
-    </a-marker>
+    <a-gltf-model 
+      src="#seats" 
+      scale="0.1 0.1 0.1" 
+      position="0 0 -1" 
+      update-scale-text
+      gesture-handler 
+    >
+    </a-gltf-model>
     <!-- 添加文字，显示模型缩放比例 -->
     <a-text 
       id="scale-text" 
