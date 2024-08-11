@@ -12,17 +12,19 @@ AFRAME.registerComponent("gesture-handler", {
     this.handleScale = this.handleScale.bind(this);
     this.handleRotation = this.handleRotation.bind(this);
 
-    this.isVisible = false;
+    this.isVisible = true;
     this.initialScale = this.el.object3D.scale.clone();
     this.scaleFactor = 1;
 
-    this.el.sceneEl.addEventListener("markerFound", (e) => {
-      this.isVisible = true;
-    });
+    // 汉莎案例不需要通过marker展示model，不需要下面的逻辑
 
-    this.el.sceneEl.addEventListener("markerLost", (e) => {
-      this.isVisible = false;
-    });
+    // this.el.sceneEl.addEventListener("markerFound", (e) => {
+    //   this.isVisible = true;
+    // });
+
+    // this.el.sceneEl.addEventListener("markerLost", (e) => {
+    //   this.isVisible = false;
+    // });
   },
 
   update: function () {

@@ -26,16 +26,33 @@
 <body style="margin: 0; overflow: hidden;">
   <a-scene embedded gesture-detector arjs="sourceType: webcam;" vr-mode-ui="enabled: false;">
     <!-- 定义模型 -->
-    <a-assets timeout="10000">
+    <a-assets timeout="20000">
       <a-asset-item id="seats" src="seats.glb"></a-asset-item>
     </a-assets>
     <!-- 使用模型 -->
-    <a-gltf-model src="#seats" scale="0.1 0.1 0.1" position="0 0 -1" gesture-handler update-scale-text></a-gltf-model>
+    <a-marker preset="hiro">
+      <a-gltf-model 
+        src="#seats" 
+        scale="0.1 0.1 0.1" 
+        position="0 0 0" 
+        update-scale-text
+        gesture-handler 
+      >
+      </a-gltf-model>
+    </a-marker>
     <!-- 添加文字，显示模型缩放比例 -->
-    <a-text id="scale-text" value="Scale: 0.1" scale="0.1 0.1" position="0 0 -1" color="black"></a-text>
+    <a-text 
+      id="scale-text" 
+      value="Scale: 0.1" 
+      scale="0.1 0.1" 
+      position="0 0 -1" 
+      color="black"
+    >
+    </a-text>
     <!-- 定义摄像头 -->
-    <!-- <a-camera></a-camera> -->
-    <a-entity camera></a-entity>
+    <a-entity camera>
+      
+    </a-entity>
   </a-scene>
 </body>
 </html>
